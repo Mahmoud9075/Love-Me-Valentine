@@ -1,0 +1,625 @@
+/* ===========================
+   Google Font & Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:linear-gradient(-45deg,
+    #fff7fa,
+    #ffeef5,
+    #ffdce8,
+    #ffe8ef);
+
+    background-size:400% 400%;
+
+    animation:bgMove 15s ease infinite;
+
+}
+
+/* ===========================
+   Background Animation
+=========================== */
+
+@keyframes bgMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* ===========================
+   Intro Screen
+=========================== */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,245,248,.97);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:1s;
+
+}
+
+.intro-card{
+
+    width:90%;
+    max-width:520px;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.55);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.5);
+
+    box-shadow:
+    0 20px 45px rgba(255,105,180,.18);
+
+}
+
+.intro-card h1{
+
+    font-size:42px;
+
+    color:#ff4f81;
+
+    margin-bottom:12px;
+
+}
+
+.intro-card p{
+
+    font-size:20px;
+
+    color:#666;
+
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.container{
+
+    width:90%;
+    max-width:470px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    box-shadow:
+
+    0 20px 40px rgba(0,0,0,.12),
+
+    0 0 30px rgba(255,120,170,.08);
+
+    animation:showCard .9s ease;
+
+}
+
+@keyframes showCard{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ===========================
+   Video
+=========================== */
+
+.local-gif,
+.gif-result{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+.gif-result{
+
+    border-radius:22px;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.15);
+
+}
+
+.media-frame{
+
+    position:relative;
+
+    width:100%;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.15);
+
+}
+
+/* ===========================
+   Title
+=========================== */
+
+.question-container h2{
+
+    margin:22px 0;
+
+    color:#ff4f81;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    line-height:1.4;
+
+}
+
+
+/* ===========================
+   Buttons
+=========================== */
+
+.button-container{
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+.btn{
+
+    width:120px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+/* YES */
+
+.yes-btn{
+
+    background:linear-gradient(45deg,#ff4f81,#ff7aa2);
+
+    color:#fff;
+
+    box-shadow:0 10px 25px rgba(255,79,129,.35);
+
+}
+
+.yes-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* NO */
+
+.no-btn{
+
+    position:absolute;
+
+    top:16px;
+
+    right:16px;
+
+    z-index:5;
+
+    background:linear-gradient(45deg,#9c27b0,#c86dd7);
+
+    color:white;
+
+    box-shadow:0 8px 20px rgba(156,39,176,.35);
+
+}
+
+/* حركة بسيطة */
+
+.no-btn.move{
+
+    transform:scale(1.1);
+
+}
+
+/* ===========================
+   Result Page
+=========================== */
+
+.result-container{
+
+    display:none;
+
+    animation:fadeResult .7s ease;
+
+}
+
+@keyframes fadeResult{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.result-container h2{
+
+    margin-top:20px;
+
+    font-size:32px;
+
+    color:#ff4f81;
+
+}
+
+/* ===========================
+   Music Button
+=========================== */
+
+#musicBtn{
+
+    position:fixed;
+
+    top:20px;
+
+    right:20px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(12px);
+
+    color:#ff4f81;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+#musicBtn:hover{
+
+    transform:scale(1.08) rotate(10deg);
+
+}
+
+/* ===========================
+   Floating Hearts
+=========================== */
+
+#hearts{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    color:#ff6b98;
+
+    opacity:.8;
+
+    animation:heartMove linear forwards;
+
+}
+
+@keyframes heartMove{
+
+    0%{
+
+        transform:translateY(0) scale(.8);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   Yes Animation
+=========================== */
+
+.yes-btn{
+
+    animation:pulse 1.5s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+.container{
+
+    width:95%;
+
+    padding:22px;
+
+}
+
+.question-container h2{
+
+    font-size:26px;
+
+}
+
+.result-container h2{
+
+    font-size:26px;
+
+}
+
+.btn{
+
+    width:105px;
+
+    height:48px;
+
+    font-size:16px;
+
+}
+
+.intro-card{
+
+    padding:30px;
+
+}
+
+.intro-card h1{
+
+    font-size:30px;
+
+}
+
+.intro-card p{
+
+    font-size:17px;
+
+}
+
+}
+
+/* ===========================
+   Small Phones
+=========================== */
+
+@media(max-width:430px){
+
+.container{
+
+    width:94%;
+
+    padding:18px;
+
+}
+
+.local-gif,
+.gif-result{
+
+    border-radius:18px;
+
+}
+
+.media-frame{
+
+    border-radius:18px;
+
+}
+
+.question-container h2{
+
+    font-size:22px;
+
+}
+
+.btn{
+
+    width:90px;
+
+    height:44px;
+
+    font-size:15px;
+
+}
+
+#musicBtn{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+}
+
+/* ===========================
+   End
+=========================== */
